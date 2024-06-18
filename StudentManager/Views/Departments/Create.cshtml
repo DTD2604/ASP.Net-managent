@@ -1,0 +1,126 @@
+﻿@model StudentManager.Data.Department
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var model = ViewData["model"] as List<StudentManager.Data.Account>;
+}
+
+
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Departments</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a asp-action="Index">Home</a></li>
+                        <li class="breadcrumb-item active">General Form</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+        <hr />
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Add new</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="row justify-content-around">
+                                <div class="col-sm-12 col-md-5">
+                                    <div class="form-group mb-3">
+                                        <div class="form-group">
+                                            <label for="InputName" asp-for="Name" class="control-label"></label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name" asp-for="Name" class="form-control" />
+                                            <span asp-validation-for="Name" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Leader</label>
+                                            <select asp-for="LeaderId" class="form-select" aria-label="Default select example" name="LeaderId">
+                                                @foreach (var item in model)
+                                                {
+                                                    <option value="@item.UserId">@item.User.FullName</option>
+                                                }
+                                            </select> 
+                                            <span asp-validation-for="LeaderId" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group mb-3">
+                                        <div class="form-group">
+                                            <label asp-for="DateBeginning" class="control-label">Beginning Date</label>
+                                            <input type="date" asp-for="DateBeginning" class="form-control"></input>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <div class="form-group">
+                                            <label for="InputFile" asp-for="Logo"></label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <label class="input-group-text" for="inputGroupFile02" asp-for="Logo"></label>
+                                                    <input type="file" class="form-control" id="inputGroupFile02" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="logo" asp-for="Logo" />
+                                                </div>
+                                                <span asp-validation-for="Logo" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <div class="form-group">
+                                            <label asp-for="Status" class="control-label"></label>
+                                            <select asp-for="Status" class="form-select" aria-label="Default select example" name="Status">
+                                                <option value="1">Active</option>
+                                                <option value="0">Deactive</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row ">
+                                    <div class="form-group col-10 mb-3">
+                                        <input type="submit" value="Create" class="btn btn-primary btn-lg" />
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                        <div class="row justify-content-end">
+
+                            <div class="form-group col-2">
+                                <a asp-action="Index">Back to List</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!--/.col (right) -->
+
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

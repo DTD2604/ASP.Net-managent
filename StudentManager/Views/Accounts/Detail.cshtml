@@ -1,0 +1,121 @@
+﻿@model StudentManager.Data.Account
+
+@{
+ViewData["Title"] = "Detail";
+Layout = "~/Views/Shared/_Layout.cshtml";
+//var name = ViewBag.Name;
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Course</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a asp-action="Index">Home</a></li>
+                        <li class="breadcrumb-item active">General Form</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+        <hr />
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Detail</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="example2" class="table table-bordered table-hover">
+                                <tr>
+                                    <th class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.User.FullName)
+                                    </th>
+                                    <td class="col-sm-12">
+                                        @Html.DisplayFor(model => model.User.FullName)
+                                    </td>
+                                    <th class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.User.Birthday)
+                                    </th>
+                                    <td class="col-sm-12">
+                                        @Html.DisplayFor(model => model.User.Birthday)
+                                    </td>
+                                    <th class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.User.Status)
+                                    </th>
+                                    <td class="col-sm-12">
+                                        @Html.DisplayFor(model => model.User.Status)
+                                    </td>
+                                    <th class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.User.Address)
+                                    </th>
+                                    <td class="col-sm-12">
+                                        @Html.DisplayFor(model => model.User.Address)
+                                    </td>
+                                    <th class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.User.Gender)
+                                    </th>
+                                    <td class="col-sm-12">
+                                        @Html.DisplayFor(model => model.User.Gender)
+                                    </td>
+                                    <th class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.User.Avatar)
+                                    </th>
+                                    <td class="col-sm-12">
+                                        @Html.DisplayFor(model => model.User.Avatar)
+                                    </td>
+                                    <th class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.User.Email)
+                                    </th>
+                                    <td class="col-sm-12">
+                                        @Html.DisplayFor(model => model.User.Email)
+                                    </td>
+                                    <th class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.User.Phone)
+                                    </th>
+                                    <td class="col-sm-12">
+                                        @Html.DisplayFor(model => model.User.Phone)
+                                    </td>
+                                    <th class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.User.ExtraCode)
+                                    </th>
+                                    <td class="col-sm-12">
+                                        @Html.DisplayFor(model => model.User.ExtraCode)
+                                    </td>
+                                    <th class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.RoleId)
+                                    </th>
+                                    <td class="col-sm-12">
+                                        @Html.DisplayFor(model => model.RoleId)
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                        <form asp-action="Delete">
+                            <input type="hidden" asp-for="Id" />
+                            <input type="submit" value="Delete" class="btn btn-danger" /> |
+                            <a asp-action="Index">Back to List</a>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
