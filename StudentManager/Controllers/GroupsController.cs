@@ -19,19 +19,29 @@ namespace StudentManager.Controllers
         }
 
         // GET: Groups
-        [Route("Group/index")]
+        [Route("Groups/index")]
         public async Task<IActionResult> Index()
         {
-            ViewBag.ModulePage = HttpContext.Request.Query["c"];
-            var studentManagerContext = _context.Groups.Include(a => a.Department).Include(a => a.Term);
+            ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString();
+            var studentManagerContext = _context.Groups
+                .Include(a => a.Department)
+                .Include(a => a.Term)
+                .Where(a => a.DeletedAt == null)
+                .Where(a => a.Department.DeletedAt == null)
+                .Where(a => a.Term.DeletedAt == null);
             return View(await studentManagerContext.ToListAsync());
         }
 
         // GET: Groups/Create
         public IActionResult Create()
         {
-            ViewData["DepartmentId"] = new SelectList(_context.Departments, "Id", "Id");
-            ViewData["TermId"] = new SelectList(_context.Terms, "Id", "Id");
+            ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString();
+            ViewData["departments"] = _context.Departments.Where(d => d.DeletedAt == null);
+            ViewData["terms"] = _context.Terms.Where(term => term.DeletedAt == null);
+            ViewData["teachers"] = _context.Accounts.Where(teacher => teacher.DeletedAt == null)
+                                                    .Where(teacher => teacher.Role.Name == "teacher");
+            ViewData["captains"] = _context.Accounts.Where(teacher => teacher.DeletedAt == null)
+                                                    .Where(teacher => teacher.Role.Name == "student");
             return View();
         }
 
@@ -48,26 +58,36 @@ namespace StudentManager.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DepartmentId"] = new SelectList(_context.Departments, "Id", "Id", group.DepartmentId);
-            ViewData["TermId"] = new SelectList(_context.Terms, "Id", "Id", group.TermId);
+            ViewData["departments"] = _context.Departments.Where(d => d.DeletedAt == null);
+            ViewData["terms"] = _context.Terms.Where(term => term.DeletedAt == null);
+            ViewData["teachers"] = _context.Accounts.Where(teacher => teacher.DeletedAt == null)
+                .Where(teacher => teacher.Role.Name == "teacher");
+            ViewData["captains"] = _context.Accounts.Where(teacher => teacher.DeletedAt == null)
+                .Where(teacher => teacher.Role.Name == "student");
             return View(group);
         }
 
         // GET: Groups/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString();
+            
             if (id == null)
             {
                 return NotFound();
             }
-
+            
             var group = await _context.Groups.FindAsync(id);
             if (group == null)
             {
                 return NotFound();
             }
-            ViewData["DepartmentId"] = new SelectList(_context.Departments, "Id", "Id", group.DepartmentId);
-            ViewData["TermId"] = new SelectList(_context.Terms, "Id", "Id", group.TermId);
+            ViewData["departments"] = _context.Departments.Where(d => d.DeletedAt == null);
+            ViewData["terms"] = _context.Terms.Where(term => term.DeletedAt == null);
+            ViewData["teachers"] = _context.Accounts.Where(teacher => teacher.DeletedAt == null)
+                .Where(teacher => teacher.Role.Name == "teacher");
+            ViewData["captains"] = _context.Accounts.Where(teacher => teacher.DeletedAt == null)
+                .Where(teacher => teacher.Role.Name == "student");
             return View(group);
         }
 
@@ -103,14 +123,20 @@ namespace StudentManager.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DepartmentId"] = new SelectList(_context.Departments, "Id", "Id", group.DepartmentId);
-            ViewData["TermId"] = new SelectList(_context.Terms, "Id", "Id", group.TermId);
+            ViewData["departments"] = _context.Departments.Where(d => d.DeletedAt == null);
+            ViewData["terms"] = _context.Terms.Where(term => term.DeletedAt == null);
+            ViewData["teachers"] = _context.Accounts.Where(teacher => teacher.DeletedAt == null)
+                .Where(teacher => teacher.Role.Name == "teacher");
+            ViewData["captains"] = _context.Accounts.Where(teacher => teacher.DeletedAt == null)
+                .Where(teacher => teacher.Role.Name == "student");
             return View(group);
         }
 
         // GET: Groups/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString();
+                
             if (id == null)
             {
                 return NotFound();

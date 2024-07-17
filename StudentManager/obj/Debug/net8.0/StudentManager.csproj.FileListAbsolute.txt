@@ -560,3 +560,4 @@ D:\auto save file word\source code (program)\C#\web\Student Manager\StudentManag
 D:\auto save file word\source code (program)\C#\web\Student Manager\StudentManager\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 D:\auto save file word\source code (program)\C#\web\Student Manager\StudentManager\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 D:\auto save file word\source code (program)\C#\web\Student Manager\StudentManager\obj\Debug\net8.0\StudentManager.MvcApplicationPartsAssemblyInfo.cs
+D:\auto save file word\source code (program)\C#\web\Student Manager\StudentManager\obj\Debug\net8.0\StudentManager.sourcelink.json

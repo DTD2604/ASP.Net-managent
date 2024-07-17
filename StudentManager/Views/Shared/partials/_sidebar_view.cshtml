@@ -72,7 +72,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="@Url.Action("Index", "Accounts")" class="nav-link @(ViewBag.ModulePage == "Accounts" ? "active" : null)">
+                    <a asp-controller="Accounts" asp-action="Index" asp-route-role="" class="nav-link @(ViewBag.ModulePage == "Accounts" ? "active" : null)">
                         <i class="nav-icon fas fa-user-circle"></i>
                         <p>
                             Accounts
@@ -97,21 +97,21 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview" style="@(ViewBag.ModulePage == "users" || ViewBag.ModulePage == "teachers" || ViewBag.ModulePage == "admins" ? "display: block" :  "display:none");">
+                    <ul class="nav nav-treeview" style="@(ViewBag.ModulePage == "Students" || ViewBag.ModulePage == "Teachers" || ViewBag.ModulePage == "Admins" ? "display: block" :  "display:none");">
                         <li class="nav-item">
-                            <a href="@Url.Action("Index", "Accounts", new {role = "user"})" class="nav-link @(ViewBag.ModulePage == "Users" ? "active" : null)">
+                            <a asp-controller="Accounts" asp-action="Index" asp-route-role="Students" class="nav-link @(ViewBag.ModulePage == "Students" ? "active" : null)">
                                 <i class="fas fa-user nav-icon"></i>
-                                <p>Users</p>
+                                <p>Students</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="@Url.Action("Index", "Accounts")" class="nav-link @(ViewBag.ModulePage == "teachers" ? "active" : null)">
+                            <a asp-controller="Accounts" asp-action="Index" asp-route-role="Teachers" class="nav-link @(ViewBag.ModulePage == "Teachers" ? "active" : null)">
                                 <i class="fas fa-chalkboard-teacher nav-icon"></i>
                                 <p>Teachers</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a  href="@Url.Action("Index", "Accounts")" class="nav-link @(ViewBag.ModulePage == "Admins" ? "active" : null)">
+                            <a asp-controller="Accounts" asp-action="Index" asp-route-role="Admins" class="nav-link @(ViewBag.ModulePage == "Admins" ? "active" : null)">
                                 <i class="far fas fa-users-cog nav-icon"></i>
                                 <p>Admins</p>
                             </a>

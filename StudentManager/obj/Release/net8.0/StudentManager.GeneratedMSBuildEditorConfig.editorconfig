@@ -1,0 +1,451 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = StudentManager
+build_property.RootNamespace = StudentManager
+build_property.ProjectDir = D:\auto save file word\source code (program)\C#\web\Student Manager\StudentManager\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = D:\auto save file word\source code (program)\C#\web\Student Manager\StudentManager
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Accounts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Accounts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Accounts/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Accounts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Accounts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/calendar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcY2FsZW5kYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Calendar/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsZW5kYXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/charts/chartjs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcY2hhcnRzXGNoYXJ0anMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/charts/flot.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcY2hhcnRzXGZsb3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/charts/inline.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcY2hhcnRzXGlubGluZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/charts/uplot.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcY2hhcnRzXHVwbG90LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Courses/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Courses/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Courses/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Courses/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Departments/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Departments/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Departments/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Departments/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/404.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNcNDA0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/500.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNcNTAwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/blank.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNcYmxhbmsuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/contact-us.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNcY29udGFjdC11cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/contacts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNcY29udGFjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/e-commerce.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNcZS1jb21tZXJjZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/faq.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNcZmFxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/forgot-password-v2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNcZm9yZ290LXBhc3N3b3JkLXYyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/forgot-password.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNcZm9yZ290LXBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/invoice-print.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNcaW52b2ljZS1wcmludC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/invoice.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNcaW52b2ljZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/language-menu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNcbGFuZ3VhZ2UtbWVudS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/legacy-user-menu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNcbGVnYWN5LXVzZXItbWVudS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/lockscreen.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNcbG9ja3NjcmVlbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/login-v2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNcbG9naW4tdjIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNcbG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/pace.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNccGFjZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNccHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/project-add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNccHJvamVjdC1hZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/project-detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNccHJvamVjdC1kZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/project-edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNccHJvamVjdC1lZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/projects.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNccHJvamVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/recover-password-v2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNccmVjb3Zlci1wYXNzd29yZC12Mi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/recover-password.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNccmVjb3Zlci1wYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/register-v2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNccmVnaXN0ZXItdjIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/examples/register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZXhhbXBsZXNccmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/forms/advanced.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZm9ybXNcYWR2YW5jZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/forms/editors.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZm9ybXNcZWRpdG9ycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/forms/general.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZm9ybXNcZ2VuZXJhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/forms/validation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZm9ybXNcdmFsaWRhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/gallery.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZ2FsbGVyeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/GroupStudents/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBTdHVkZW50c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/GroupStudents/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBTdHVkZW50c1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/GroupStudents/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBTdHVkZW50c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/GroupStudents/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBTdHVkZW50c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Groups/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Groups/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Groups/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Groups/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/kanban.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Nca2FuYmFuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/layout/boxed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcbGF5b3V0XGJveGVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/layout/collapsed-sidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcbGF5b3V0XGNvbGxhcHNlZC1zaWRlYmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/layout/fixed-footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcbGF5b3V0XGZpeGVkLWZvb3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/layout/fixed-sidebar-custom.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcbGF5b3V0XGZpeGVkLXNpZGViYXItY3VzdG9tLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/layout/fixed-sidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcbGF5b3V0XGZpeGVkLXNpZGViYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/layout/fixed-topnav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcbGF5b3V0XGZpeGVkLXRvcG5hdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/layout/top-nav-sidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcbGF5b3V0XHRvcC1uYXYtc2lkZWJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/layout/top-nav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcbGF5b3V0XHRvcC1uYXYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/mailbox/compose.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcbWFpbGJveFxjb21wb3NlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/mailbox/mailbox.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcbWFpbGJveFxtYWlsYm94LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/mailbox/read-mail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcbWFpbGJveFxyZWFkLW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Schedules/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NoZWR1bGVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Schedules/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NoZWR1bGVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Schedules/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NoZWR1bGVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Schedules/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NoZWR1bGVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/search/enhanced-results.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc2VhcmNoXGVuaGFuY2VkLXJlc3VsdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/search/enhanced.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc2VhcmNoXGVuaGFuY2VkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/search/simple-results.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc2VhcmNoXHNpbXBsZS1yZXN1bHRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/search/simple.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncc2VhcmNoXHNpbXBsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Shared/partials/_footer_view.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXHBhcnRpYWxzXF9mb290ZXJfdmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Shared/partials/_header_view.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXHBhcnRpYWxzXF9oZWFkZXJfdmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Shared/partials/_navbar_view.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXHBhcnRpYWxzXF9uYXZiYXJfdmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Shared/partials/_sidebar_view.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXHBhcnRpYWxzXF9zaWRlYmFyX3ZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/tables/data.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdGFibGVzXGRhdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/tables/jsgrid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdGFibGVzXGpzZ3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/tables/simple.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcdGFibGVzXHNpbXBsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Terms/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVybXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Terms/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVybXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Terms/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVybXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Terms/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVybXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/Terms/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVybXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/UI/buttons.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVUlcYnV0dG9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/UI/general.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVUlcZ2VuZXJhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/UI/icons.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVUlcaWNvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/UI/modals.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVUlcbW9kYWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/UI/navbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVUlcbmF2YmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/UI/ribbons.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVUlccmliYm9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/UI/sliders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVUlcc2xpZGVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/UI/timeline.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVUlcdGltZWxpbmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/widgets.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncd2lkZ2V0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/auto save file word/source code (program)/C\#/web/Student Manager/StudentManager/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

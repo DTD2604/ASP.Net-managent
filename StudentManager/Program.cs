@@ -42,13 +42,13 @@ namespace StudentManager
             app.UseAuthorization();
 
             app.MapControllerRoute(
-                name: "roleRoute",
-                pattern: """{role}/{controller=Home}/{action=Index}/{id}""");
-
-            app.MapControllerRoute(
                 name: "default",
                 pattern: """{controller=Home}/{action=Index}/{id?}""");
-            
+
+            app.MapControllerRoute(
+                name: "roleRoute",
+                pattern: """{controller=Home}/{action=Index}/{role?}/{id?}""");
+
             app.Run();
         }
     }

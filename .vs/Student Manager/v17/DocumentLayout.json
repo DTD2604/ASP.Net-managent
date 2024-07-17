@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|d:\\auto save file word\\source code (program)\\c#\\web\\student manager\\studentmanager\\views\\shared\\partials\\_sidebar_view.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\views\\shared\\partials\\_sidebar_view.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|d:\\auto save file word\\source code (program)\\c#\\web\\student manager\\studentmanager\\views\\accounts\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\views\\accounts\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|d:\\auto save file word\\source code (program)\\c#\\web\\student manager\\studentmanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|d:\\auto save file word\\source code (program)\\c#\\web\\student manager\\studentmanager\\views\\accounts\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\views\\accounts\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|d:\\auto save file word\\source code (program)\\c#\\web\\student manager\\studentmanager\\views\\accounts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\views\\accounts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|d:\\auto save file word\\source code (program)\\c#\\web\\student manager\\studentmanager\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|d:\\auto save file word\\source code (program)\\c#\\web\\student manager\\studentmanager\\views\\accounts\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\views\\accounts\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|d:\\auto save file word\\source code (program)\\c#\\web\\student manager\\studentmanager\\controllers\\departmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\controllers\\departmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|d:\\auto save file word\\source code (program)\\c#\\web\\student manager\\studentmanager\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|d:\\auto save file word\\source code (program)\\c#\\web\\student manager\\studentmanager\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|d:\\auto save file word\\source code (program)\\c#\\web\\student manager\\studentmanager\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|solutionrelative:studentmanager\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{415DF938-BD45-46F8-8DCC-1392C6C69643}|StudentManager\\StudentManager.csproj|d:\\auto save file word\\source code (program)\\c#\\web\\student manager\\studentmanager\\adminlte-3.2.0\\index3.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -47,79 +47,79 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Views\\Accounts\\Index.cshtml",
-              "RelativeDocumentMoniker": "StudentManager\\Views\\Accounts\\Index.cshtml",
-              "ToolTip": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Views\\Accounts\\Index.cshtml",
-              "RelativeToolTip": "StudentManager\\Views\\Accounts\\Index.cshtml",
-              "ViewState": "AQIAAFEAAAAAAAAAAAAAAAkAAAADAAAA",
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Views\\Accounts\\Detail.cshtml",
+              "RelativeDocumentMoniker": "StudentManager\\Views\\Accounts\\Detail.cshtml",
+              "ToolTip": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Views\\Accounts\\Detail.cshtml",
+              "RelativeToolTip": "StudentManager\\Views\\Accounts\\Detail.cshtml",
+              "ViewState": "AQIAALcAAAAAAAAAAAAiwMsAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-04T03:50:47.78Z",
+              "WhenOpened": "2024-07-16T03:25:21.437Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Program.cs",
-              "RelativeDocumentMoniker": "StudentManager\\Program.cs",
-              "ToolTip": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Program.cs",
-              "RelativeToolTip": "StudentManager\\Program.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAqwC0AAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T03:10:56.611Z",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Views\\Accounts\\Edit.cshtml",
+              "RelativeDocumentMoniker": "StudentManager\\Views\\Accounts\\Edit.cshtml",
+              "ToolTip": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Views\\Accounts\\Edit.cshtml",
+              "RelativeToolTip": "StudentManager\\Views\\Accounts\\Edit.cshtml",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAAAB0AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-16T01:29:01.745Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_sidebar_view.cshtml",
-              "DocumentMoniker": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Views\\Shared\\partials\\_sidebar_view.cshtml",
-              "RelativeDocumentMoniker": "StudentManager\\Views\\Shared\\partials\\_sidebar_view.cshtml",
-              "ToolTip": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Views\\Shared\\partials\\_sidebar_view.cshtml",
-              "RelativeToolTip": "StudentManager\\Views\\Shared\\partials\\_sidebar_view.cshtml",
-              "ViewState": "AQIAAGAAAAAAAAAAAAAAAGUAAABHAAAA",
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Views\\Accounts\\Delete.cshtml",
+              "RelativeDocumentMoniker": "StudentManager\\Views\\Accounts\\Delete.cshtml",
+              "ToolTip": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Views\\Accounts\\Delete.cshtml",
+              "RelativeToolTip": "StudentManager\\Views\\Accounts\\Delete.cshtml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAiwCQAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-04T03:28:06.977Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DepartmentsController.cs",
-              "DocumentMoniker": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Controllers\\DepartmentsController.cs",
-              "RelativeDocumentMoniker": "StudentManager\\Controllers\\DepartmentsController.cs",
-              "ToolTip": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Controllers\\DepartmentsController.cs",
-              "RelativeToolTip": "StudentManager\\Controllers\\DepartmentsController.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAuwBsAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T01:07:46.727Z",
+              "WhenOpened": "2024-07-16T01:28:59.543Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AccountsController.cs",
-              "DocumentMoniker": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Controllers\\AccountsController.cs",
-              "RelativeDocumentMoniker": "StudentManager\\Controllers\\AccountsController.cs",
-              "ToolTip": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Controllers\\AccountsController.cs",
-              "RelativeToolTip": "StudentManager\\Controllers\\AccountsController.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAqwA4AAAAFAAAA",
+              "Title": "DepartmentsController.cs",
+              "DocumentMoniker": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Controllers\\DepartmentsController.cs",
+              "RelativeDocumentMoniker": "StudentManager\\Controllers\\DepartmentsController.cs",
+              "ToolTip": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Controllers\\DepartmentsController.cs",
+              "RelativeToolTip": "StudentManager\\Controllers\\DepartmentsController.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAAAEEAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T02:10:20.766Z",
+              "WhenOpened": "2024-07-16T01:18:22.491Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "StudentManager\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "StudentManager\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABIAAAApAAAA",
+              "Title": "CoursesController.cs",
+              "DocumentMoniker": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Controllers\\CoursesController.cs",
+              "RelativeDocumentMoniker": "StudentManager\\Controllers\\CoursesController.cs",
+              "ToolTip": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Controllers\\CoursesController.cs",
+              "RelativeToolTip": "StudentManager\\Controllers\\CoursesController.cs",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAAwF8AAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T01:03:37.491Z",
+              "WhenOpened": "2024-07-16T01:09:13.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountsController.cs",
+              "DocumentMoniker": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Controllers\\AccountsController.cs",
+              "RelativeDocumentMoniker": "StudentManager\\Controllers\\AccountsController.cs",
+              "ToolTip": "D:\\auto save file word\\source code (program)\\C#\\web\\Student Manager\\StudentManager\\Controllers\\AccountsController.cs",
+              "RelativeToolTip": "StudentManager\\Controllers\\AccountsController.cs",
+              "ViewState": "AQIAAL4AAAAAAAAAAAAAANIAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T02:10:20.766Z",
               "EditorCaption": ""
             },
             {

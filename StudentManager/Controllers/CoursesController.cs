@@ -28,7 +28,7 @@ namespace StudentManager.Controllers
         public IActionResult Create()
         {
             ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString();
-            ViewData["DepartmentId"] = new SelectList(_context.Departments, "Id", "Id");
+            ViewData["DepartmentId"] = new SelectList(_context.Departments.Where(d => d.DeletedAt == null), "Id", "Id");
             ViewData["model"] = _context.Departments.Where(d => d.DeletedAt == null).ToList();
             return View();
         }
