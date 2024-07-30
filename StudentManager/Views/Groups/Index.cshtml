@@ -77,19 +77,10 @@
                                             @Html.DisplayFor(modelItem => item.StudentNumbers)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.Teacher)
+                                            @Html.DisplayFor(modelItem => item.Teacher.User.FullName)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.Captain)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Status)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Department.Id)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Term.Id)
+                                            @Html.DisplayFor(modelItem => item.Captain.User.FullName)
                                         </td>
                                         <td>
                                             @{
@@ -102,6 +93,12 @@
                                                     <span>Deactive</span>
                                                 }
                                             }
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Department.Id)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Term.Name)
                                         </td>
                                         <div>
                                             <td>

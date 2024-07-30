@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -17,14 +18,18 @@ namespace StudentManager.Controllers
 
         // GET: Courses
         [Route("Courses/index")]
+        [Authorize(Roles = "admin,teacher,student")]
         public async Task<IActionResult> Index()
         {
             ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString();
-            var studentManagerContext = _context.Courses.Where(c => c.DeletedAt == null).Include(c => c.Department);
+            var studentManagerContext = _context.Courses
+                .Where(c => c.DeletedAt == null)
+                .Include(c => c.Department);
             return View(await studentManagerContext.ToListAsync());
         }
 
         // GET: Courses/Create
+        [Authorize(Roles = "admin")]
         public IActionResult Create()
         {
             ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString();
@@ -58,6 +63,7 @@ namespace StudentManager.Controllers
         }
 
         // GET: Courses/Edit/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -120,6 +126,7 @@ namespace StudentManager.Controllers
         }
 
         // GET: Courses/Delete/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

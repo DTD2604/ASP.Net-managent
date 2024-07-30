@@ -3,83 +3,143 @@
 @{
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var teacher = ViewData["teachers"] as List<StudentManager.Data.Account>;
+    var captains = ViewData["captains"] as List<StudentManager.Data.Account>;
+    var terms = ViewData["terms"] as List<StudentManager.Data.Term>;
+    var departments = ViewData["departments"] as List<StudentManager.Data.Department>;
 }
 
-<h1>Edit</h1>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Group</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a asp-action="Index">Home</a></li>
+                        <li class="breadcrumb-item active">General Form</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+        <hr />
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Edit</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form asp-action="Edit">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id"/>
 
-<h4>Group</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="DepartmentId" class="control-label"></label>
-                <select asp-for="DepartmentId" class="form-control" asp-items="ViewBag.DepartmentId"></select>
-                <span asp-validation-for="DepartmentId" class="text-danger"></span>
+                            <div class="row justify-content-around">
+                                <div class="col-sm-12 col-md-5">
+                                    <div class="form-group mb-3">
+                                        <div class="form-group">
+                                            <label asp-for="DepartmentId" class="control-label"></label>
+                                            <select asp-for="DepartmentId" class="form-select" aria-label="Default select example" name="DepartmentId">
+                                                @foreach (var item in departments)
+                                                {
+                                                <option value="@item.Id">@item.Name</option>
+                                                }
+                                            </select>
+                                            <span asp-validation-for="DepartmentId" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="Name" class="control-label"></label>
+                                            <input asp-for="Name" class="form-control" />
+                                            <span asp-validation-for="Name" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Teacher</label>
+                                            <select asp-for="TeacherId" class="form-select" aria-label="Default select example" name="RoleId">
+                                                @foreach (var item in teacher)
+                                                {
+                                                    <option value="@item.Id">@item.User.FullName</option>
+                                                }
+                                            </select>
+                                            <span asp-validation-for="TeacherId" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="StudentNumbers" class="control-label"></label>
+                                            <input asp-for="StudentNumbers" class="form-control" />
+                                            <span asp-validation-for="StudentNumbers" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group mb-3">
+                                        <div class="form-group">
+                                            <label asp-for="TermId" class="control-label">Term</label>
+                                            <select asp-for="TermId" class="form-select" aria-label="Default select example" name="TermId">
+                                                @foreach (var item in terms)
+                                                {
+                                                <option value="@item.Id">@item.Name</option>
+                                                }
+                                            </select>
+                                            <span asp-validation-for="TermId" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Captain</label>
+                                            <select asp-for="CaptainId" class="form-select" aria-label="Default select example" name="UserId">
+                                                @foreach (var item in captains)
+                                                {
+                                                    <option value="@item.Id">@item.User.FullName</option>
+                                                }
+                                            </select>
+                                            <span asp-validation-for="CaptainId" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="Status" class="control-label"></label>
+                                            <select asp-for="Status" class="form-select" aria-label="Default select example" name="Status">
+                                                <option value="1">Active</option>
+                                                <option value="0">Deactive</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-end">
+                                <div class="form-group col-2">
+                                    <input type="submit" value="Update" class="btn btn-primary"/>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="row justify-content-start">
+
+                            <div class="form-group">
+                                <a asp-action="Index">Back to List</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!--/.col (right) -->
+
             </div>
-            <div class="form-group">
-                <label asp-for="TermId" class="control-label"></label>
-                <select asp-for="TermId" class="form-control" asp-items="ViewBag.TermId"></select>
-                <span asp-validation-for="TermId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Slug" class="control-label"></label>
-                <input asp-for="Slug" class="form-control" />
-                <span asp-validation-for="Slug" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="StudentNumbers" class="control-label"></label>
-                <input asp-for="StudentNumbers" class="form-control" />
-                <span asp-validation-for="StudentNumbers" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Teacher" class="control-label"></label>
-                <input asp-for="Teacher" class="form-control" />
-                <span asp-validation-for="Teacher" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Captain" class="control-label"></label>
-                <input asp-for="Captain" class="form-control" />
-                <span asp-validation-for="Captain" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <input asp-for="Status" class="form-control" />
-                <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CreatedAt" class="control-label"></label>
-                <input asp-for="CreatedAt" class="form-control" />
-                <span asp-validation-for="CreatedAt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UpdatedAt" class="control-label"></label>
-                <input asp-for="UpdatedAt" class="form-control" />
-                <span asp-validation-for="UpdatedAt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeletedAt" class="control-label"></label>
-                <input asp-for="DeletedAt" class="form-control" />
-                <span asp-validation-for="DeletedAt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

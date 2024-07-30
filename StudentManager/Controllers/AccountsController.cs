@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +18,7 @@ namespace StudentManager.Controllers
 
         // GET: Accounts
         [HttpGet]
+        [Authorize(Roles = "admin,teacher")]
         public async Task<IActionResult> Index(string? role)
         {
             if (role != null)
@@ -62,6 +64,7 @@ namespace StudentManager.Controllers
         // GET: Accounts/Create
         /*[HttpPost]
         [Route("{controller}/Create/{id?}")]*/
+        [Authorize(Roles = "admin")]
         public IActionResult Create()
         {
             ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString();
@@ -95,6 +98,7 @@ namespace StudentManager.Controllers
         // GET: Accounts/Edit/5
         /*[HttpPost]
         [Route("{controller}/Edit/{id}")]*/
+        [Authorize(Roles = "admin,teacher")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -157,6 +161,7 @@ namespace StudentManager.Controllers
         }
 
         // GET: Accounts/Delete/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

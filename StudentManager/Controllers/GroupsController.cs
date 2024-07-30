@@ -24,11 +24,15 @@ namespace StudentManager.Controllers
         {
             ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString();
             var studentManagerContext = _context.Groups
-                .Include(a => a.Department)
-                .Include(a => a.Term)
-                .Where(a => a.DeletedAt == null)
-                .Where(a => a.Department.DeletedAt == null)
-                .Where(a => a.Term.DeletedAt == null);
+                .Include(group => group.Department)
+                .Include(group => group.Term)
+                .Include(group => group.Captain)
+                    .ThenInclude(captain => captain.User)
+                .Include(group => group.Teacher)
+                    .ThenInclude(teacher => teacher.User)
+                .Where(group => group.DeletedAt == null)
+                .Where(group => group.Department.DeletedAt == null)
+                .Where(group => group.Term.DeletedAt == null);
             return View(await studentManagerContext.ToListAsync());
         }
 
@@ -36,12 +40,12 @@ namespace StudentManager.Controllers
         public IActionResult Create()
         {
             ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString();
-            ViewData["departments"] = _context.Departments.Where(d => d.DeletedAt == null);
-            ViewData["terms"] = _context.Terms.Where(term => term.DeletedAt == null);
-            ViewData["teachers"] = _context.Accounts.Where(teacher => teacher.DeletedAt == null)
-                                                    .Where(teacher => teacher.Role.Name == "teacher");
-            ViewData["captains"] = _context.Accounts.Where(teacher => teacher.DeletedAt == null)
-                                                    .Where(teacher => teacher.Role.Name == "student");
+            ViewData["departments"] = _context.Departments.Where(d => d.DeletedAt == null).ToList();
+            ViewData["terms"] = _context.Terms.Where(term => term.DeletedAt == null).ToList();
+            ViewData["teachers"] = _context.Accounts.Include(teacher => teacher.User).Where(teacher => teacher.DeletedAt == null)
+                .Where(teacher => teacher.RoleId == 2).ToList();
+            ViewData["captains"] = _context.Accounts.Include(teacher => teacher.User).Where(teacher => teacher.DeletedAt == null)
+                .Where(teacher => teacher.RoleId == 1).ToList();
             return View();
         }
 
@@ -50,21 +54,23 @@ namespace StudentManager.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,DepartmentId,TermId,Name,Slug,StudentNumbers,Teacher,Captain,Status,CreatedAt,UpdatedAt,DeletedAt")] Group group)
+        public async Task<IActionResult> Create([Bind("Id,DepartmentId,TermId,Name,Slug,StudentNumbers,TeacherId,CaptainId,Status,CreatedAt,UpdatedAt,DeletedAt")] Group group)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(group);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["departments"] = _context.Departments.Where(d => d.DeletedAt == null);
-            ViewData["terms"] = _context.Terms.Where(term => term.DeletedAt == null);
-            ViewData["teachers"] = _context.Accounts.Where(teacher => teacher.DeletedAt == null)
-                .Where(teacher => teacher.Role.Name == "teacher");
-            ViewData["captains"] = _context.Accounts.Where(teacher => teacher.DeletedAt == null)
-                .Where(teacher => teacher.Role.Name == "student");
-            return View(group);
+            /*if (ModelState.IsValid)
+            {*/
+            group.Slug = GenerateSlug(group.Name);
+            group.CreatedAt = DateTime.UtcNow;
+            _context.Add(group);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+            /*}*/
+            /*ViewData["departments"] = _context.Departments.Where(d => d.DeletedAt == null).ToList();
+            ViewData["terms"] = _context.Terms.Where(term => term.DeletedAt == null).ToList();
+            ViewData["teachers"] = _context.Accounts.Include(teacher => teacher.User).Where(teacher => teacher.DeletedAt == null)
+                .Where(teacher => teacher.RoleId == 2).ToList();
+            ViewData["captains"] = _context.Accounts.Include(teacher => teacher.User).Where(teacher => teacher.DeletedAt == null)
+                .Where(teacher => teacher.RoleId == 1).ToList();*/
+            //return View(group);
         }
 
         // GET: Groups/Edit/5
@@ -82,12 +88,12 @@ namespace StudentManager.Controllers
             {
                 return NotFound();
             }
-            ViewData["departments"] = _context.Departments.Where(d => d.DeletedAt == null);
-            ViewData["terms"] = _context.Terms.Where(term => term.DeletedAt == null);
-            ViewData["teachers"] = _context.Accounts.Where(teacher => teacher.DeletedAt == null)
-                .Where(teacher => teacher.Role.Name == "teacher");
-            ViewData["captains"] = _context.Accounts.Where(teacher => teacher.DeletedAt == null)
-                .Where(teacher => teacher.Role.Name == "student");
+            ViewData["departments"] = _context.Departments.Where(d => d.DeletedAt == null).ToList();
+            ViewData["terms"] = _context.Terms.Where(term => term.DeletedAt == null).ToList();
+            ViewData["teachers"] = _context.Accounts.Include(teacher => teacher.User).Where(teacher => teacher.DeletedAt == null)
+                .Where(teacher => teacher.RoleId == 2).ToList();
+            ViewData["captains"] = _context.Accounts.Include(teacher => teacher.User).Where(teacher => teacher.DeletedAt == null)
+                .Where(teacher => teacher.RoleId == 1).ToList();
             return View(group);
         }
 
@@ -103,10 +109,11 @@ namespace StudentManager.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
+            /*if (ModelState.IsValid)
+            {*/
                 try
                 {
+                    group.UpdatedAt = DateTime.UtcNow;
                     _context.Update(group);
                     await _context.SaveChangesAsync();
                 }
@@ -122,14 +129,14 @@ namespace StudentManager.Controllers
                     }
                 }
                 return RedirectToAction(nameof(Index));
-            }
-            ViewData["departments"] = _context.Departments.Where(d => d.DeletedAt == null);
-            ViewData["terms"] = _context.Terms.Where(term => term.DeletedAt == null);
-            ViewData["teachers"] = _context.Accounts.Where(teacher => teacher.DeletedAt == null)
-                .Where(teacher => teacher.Role.Name == "teacher");
-            ViewData["captains"] = _context.Accounts.Where(teacher => teacher.DeletedAt == null)
-                .Where(teacher => teacher.Role.Name == "student");
-            return View(group);
+            /*}*/
+            /*ViewData["departments"] = _context.Departments.Where(d => d.DeletedAt == null).ToList();
+            ViewData["terms"] = _context.Terms.Where(term => term.DeletedAt == null).ToList();
+            ViewData["teachers"] = _context.Accounts.Include(teacher => teacher.User).Where(teacher => teacher.DeletedAt == null)
+                .Where(teacher => teacher.RoleId == 2).ToList();
+            ViewData["captains"] = _context.Accounts.Include(teacher => teacher.User).Where(teacher => teacher.DeletedAt == null)
+                .Where(teacher => teacher.RoleId == 1).ToList();
+            return View(group);*/
         }
 
         // GET: Groups/Delete/5
@@ -143,8 +150,15 @@ namespace StudentManager.Controllers
             }
 
             var group = await _context.Groups
-                .Include(a => a.Department)
-                .Include(a => a.Term)
+                .Include(group => group.Department)
+                .Include(group => group.Term)
+                .Include(group => group.Captain)
+                .ThenInclude(captain => captain.User)
+                .Include(group => group.Teacher)
+                .ThenInclude(teacher => teacher.User)
+                .Where(group => group.DeletedAt == null)
+                .Where(group => group.Department.DeletedAt == null)
+                .Where(group => group.Term.DeletedAt == null)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (group == null)
             {
@@ -162,7 +176,8 @@ namespace StudentManager.Controllers
             var group = await _context.Groups.FindAsync(id);
             if (group != null)
             {
-                _context.Groups.Remove(group);
+                group.DeletedAt = DateTime.UtcNow;
+                _context.Groups.Update(group);
             }
 
             await _context.SaveChangesAsync();
@@ -172,6 +187,12 @@ namespace StudentManager.Controllers
         private bool GroupExists(int id)
         {
             return _context.Groups.Any(e => e.Id == id);
+        }
+        
+        private string GenerateSlug(string text)
+        {
+            // Viết logic xử lý Slug ở đây
+            return text.Replace(" ", "-");
         }
     }
 }

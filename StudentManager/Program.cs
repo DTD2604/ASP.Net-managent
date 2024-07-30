@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using StudentManager.Data;
 
@@ -23,6 +24,21 @@ namespace StudentManager
             {
                 mvcBuilder.AddRazorRuntimeCompilation();
             }
+            
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/Account/Login";
+                    options.AccessDeniedPath = "/Account/AccessDenied";
+                });
+
+            /*// Cấu hình chính sách phân quyền
+            builder.Services.AddAuthorization(options =>
+            {
+                options.AddPolicy("RequireStudentRole", policy => policy.RequireRole("student"));
+                options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("admin"));
+                options.AddPolicy("RequireTeacherRole", policy => policy.RequireRole("teacher"));
+            });*/
 
             var app = builder.Build();
 
@@ -40,9 +56,13 @@ namespace StudentManager
             app.UseRouting();
 
             app.UseAuthorization();
-
+            
             app.MapControllerRoute(
                 name: "default",
+                pattern:"""{controller=LoginForm}/{action=Index}""");
+
+            app.MapControllerRoute(
+                name: "home",
                 pattern: """{controller=Home}/{action=Index}/{id?}""");
 
             app.MapControllerRoute(
