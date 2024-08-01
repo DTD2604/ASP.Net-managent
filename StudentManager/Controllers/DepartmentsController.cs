@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using StudentManager.Data;
 using StudentManager.Models;
-using StudentManager.Models.ViewModels;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace StudentManager.Controllers

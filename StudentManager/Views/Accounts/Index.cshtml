@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<StudentManager.Data.Account>
 @{
     ViewData["Title"] = "Index";
+    var role = ViewBag.ModulePage;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -14,7 +15,9 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li class="breadcrumb-item">
+                            <a href="@Url.Action("Index", "Home")">Home</a>
+                        </li>
                         <li class="breadcrumb-item active">Account</li>
                     </ol>
                 </div><!-- /.col -->
@@ -32,65 +35,83 @@
                             <h3 class="card-title">DataTable of Account</h3>
                         </div>
                         <!-- HTML !-->
-                        <a class="button-68" asp-action="Create">Create New</a>
+                        <div class="d-grid gap-2 col-6 d-md-block">
+                            <a class="button-68" asp-action="Create" style="@((role == "Students" || role == "Teachers" || role == "Admins") ? "display: none;" : "")">Create Account</a>
+                        </div>
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead class="table-primary">
-                                    <tr>
-                                        <th>
-                                                @Html.DisplayNameFor(model => model.Username)
-                                        </th>
-                                        <th>
-                                                @Html.DisplayNameFor(model => model.Role)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.Status)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.LastLogin)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.LastLogout)
-                                        </th>        
-                                        <th></th>
-                                    </tr>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Username)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.User.FullName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.IpClient)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Role)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Status)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.LastLogin)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.LastLogout)
+                                    </th>
+                                    <th></th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach (var item in Model)
-                                    {
-                                        <tr>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.Username)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.RoleId)
-                                            </td>
-                                            <td>
-                                                @{
-                                                    if(item.Status == 1)
-                                                    {
-                                                        <span>Active</span>
-                                                    }
-                                                    else
-                                                    {
-                                                        <span>Deactive</span>
-                                                    }
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Username)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.User.FullName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IpClient)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Role.Name)
+                                        </td>
+                                        <td>
+                                            @{
+                                                if (item.Status == 1)
+                                                {
+                                                    <span>Active</span>
                                                 }
-                                            </td> 
+                                                else
+                                                {
+                                                    <span>Deactive</span>
+                                                }
+                                            }
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.LastLogin)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.LastLogout)
+                                        </td>
+                                        <div >
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.LastLogin)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.LastLogout)
-                                            </td>
-                                            <td>
-                                                <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                                                <a class="btn btn-primary btn-sm" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                                <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id" style="@((role == "Students" || role == "Teachers" || role == "Admins") ? "display: none;" : "")">Edit</a>
+
+                                                <a class="btn btn-primary btn-sm" asp-action="Delete" asp-route-id="@item.Id" style="@((role == "Students" || role == "Teachers" || role == "Admins") ? "display: none;" : "")">Delete</a>
+
                                                 <a class="btn btn-primary btn-sm" asp-action="Detail" asp-route-id="@item.Id">Detail</a>
                                             </td>
-                                        </tr>
-                                    }
+                                        </div>
+                                    </tr>
+                                }
                                 </tbody>
                             </table>
                         </div>

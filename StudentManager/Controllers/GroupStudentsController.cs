@@ -22,7 +22,16 @@ namespace StudentManager.Controllers
         public async Task<IActionResult> Index()
         {
             ViewBag.ModulePage = HttpContext.Request.Query["c"];
-            var studentManagerContext = _context.GroupStudents.Include(g => g.Course).Include(g => g.Group).Include(g => g.Student).Include(g => g.Teacher);
+            var studentManagerContext = _context.GroupStudents
+                .Include(g => g.Course)
+                .Include(g => g.Group)
+                .Include(g => g.Student)
+                .Include(g => g.Teacher)
+                .Where(g => g.Course.DeletedAt == null)
+                .Where(g => g.Student.DeletedAt == null)
+                .Where(g => g.Group.DeletedAt == null)
+                .Where(g => g.Student.Role.Id == 1)
+                .Where(g => g.Teacher.Role.Id == 2);
             return View(await studentManagerContext.ToListAsync());
         }
 
@@ -41,19 +50,14 @@ namespace StudentManager.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,GroupId,StudentId,CourseId,TeacherId,Absent,Present,LearningDate,CreatedAt,UpdatedAt,DeletedAt")] GroupStudent groupStudent)
+        public async Task<IActionResult> Create(
+            [Bind("GroupId,StudentId,CourseId,TeacherId,Absent,Present,LearningDate,CreatedAt")]
+            GroupStudent groupStudent)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(groupStudent);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["CourseId"] = new SelectList(_context.Courses, "Id", "Id", groupStudent.CourseId);
-            ViewData["GroupId"] = new SelectList(_context.Groups, "Id", "Id", groupStudent.GroupId);
-            ViewData["StudentId"] = new SelectList(_context.Accounts, "Id", "Id", groupStudent.StudentId);
-            ViewData["TeacherId"] = new SelectList(_context.Accounts, "Id", "Id", groupStudent.TeacherId);
-            return View(groupStudent);
+            groupStudent.CreatedAt = DateTime.UtcNow;
+            _context.Add(groupStudent);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: GroupStudents/Edit/5
@@ -69,6 +73,7 @@ namespace StudentManager.Controllers
             {
                 return NotFound();
             }
+
             ViewData["CourseId"] = new SelectList(_context.Courses, "Id", "Id", groupStudent.CourseId);
             ViewData["GroupId"] = new SelectList(_context.Groups, "Id", "Id", groupStudent.GroupId);
             ViewData["StudentId"] = new SelectList(_context.Accounts, "Id", "Id", groupStudent.StudentId);
@@ -81,7 +86,9 @@ namespace StudentManager.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,GroupId,StudentId,CourseId,TeacherId,Absent,Present,LearningDate,CreatedAt,UpdatedAt,DeletedAt")] GroupStudent groupStudent)
+        public async Task<IActionResult> Edit(int id,
+            [Bind("Id,GroupId,StudentId,CourseId,TeacherId,Absent,Present,LearningDate,CreatedAt,UpdatedAt,DeletedAt")]
+            GroupStudent groupStudent)
         {
             if (id != groupStudent.Id)
             {
@@ -106,8 +113,10 @@ namespace StudentManager.Controllers
                         throw;
                     }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
+
             ViewData["CourseId"] = new SelectList(_context.Courses, "Id", "Id", groupStudent.CourseId);
             ViewData["GroupId"] = new SelectList(_context.Groups, "Id", "Id", groupStudent.GroupId);
             ViewData["StudentId"] = new SelectList(_context.Accounts, "Id", "Id", groupStudent.StudentId);

@@ -1,9 +1,9 @@
 ﻿@model StudentManager.Data.Account
 
 @{
-ViewData["Title"] = "Detail";
-Layout = "~/Views/Shared/_Layout.cshtml";
-//var name = ViewBag.Name;
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //var name = ViewBag.Name;
 }
 
 <div class="content-wrapper">
@@ -39,76 +39,170 @@ Layout = "~/Views/Shared/_Layout.cshtml";
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example2" class="table table-bordered table-hover">
-                                <tr>
-                                    <th class="col-sm-2">
-                                        @Html.DisplayNameFor(model => model.User.FullName)
-                                    </th>
-                                    <td class="col-sm-12">
-                                        @Html.DisplayFor(model => model.User.FullName)
-                                    </td>
-                                    <th class="col-sm-2">
-                                        @Html.DisplayNameFor(model => model.User.Birthday)
-                                    </th>
-                                    <td class="col-sm-12">
-                                        @Html.DisplayFor(model => model.User.Birthday)
-                                    </td>
-                                    <th class="col-sm-2">
-                                        @Html.DisplayNameFor(model => model.User.Status)
-                                    </th>
-                                    <td class="col-sm-12">
-                                        @Html.DisplayFor(model => model.User.Status)
-                                    </td>
-                                    <th class="col-sm-2">
-                                        @Html.DisplayNameFor(model => model.User.Address)
-                                    </th>
-                                    <td class="col-sm-12">
-                                        @Html.DisplayFor(model => model.User.Address)
-                                    </td>
-                                    <th class="col-sm-2">
-                                        @Html.DisplayNameFor(model => model.User.Gender)
-                                    </th>
-                                    <td class="col-sm-12">
-                                        @Html.DisplayFor(model => model.User.Gender)
-                                    </td>
-                                    <th class="col-sm-2">
-                                        @Html.DisplayNameFor(model => model.User.Avatar)
-                                    </th>
-                                    <td class="col-sm-12">
-                                        @Html.DisplayFor(model => model.User.Avatar)
-                                    </td>
-                                    <th class="col-sm-2">
-                                        @Html.DisplayNameFor(model => model.User.Email)
-                                    </th>
-                                    <td class="col-sm-12">
-                                        @Html.DisplayFor(model => model.User.Email)
-                                    </td>
-                                    <th class="col-sm-2">
-                                        @Html.DisplayNameFor(model => model.User.Phone)
-                                    </th>
-                                    <td class="col-sm-12">
-                                        @Html.DisplayFor(model => model.User.Phone)
-                                    </td>
-                                    <th class="col-sm-2">
-                                        @Html.DisplayNameFor(model => model.User.ExtraCode)
-                                    </th>
-                                    <td class="col-sm-12">
-                                        @Html.DisplayFor(model => model.User.ExtraCode)
-                                    </td>
-                                    <th class="col-sm-2">
-                                        @Html.DisplayNameFor(model => model.RoleId)
-                                    </th>
-                                    <td class="col-sm-12">
-                                        @Html.DisplayFor(model => model.RoleId)
-                                    </td>
-                                </tr>
+                                <tbody>
+                                    <tr class="container text-center">
+                                        <td class="table-gray col-md-3">
+                                            <strong>
+                                                @Html.DisplayNameFor(model => model.User.FullName)
+                                            </strong>
+                                        </td>
+                                        <td class="col-md-6">
+                                            <span>
+                                                @Html.DisplayFor(model => model.User.FullName)
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="container text-center">
+                                        <td class="table-gray">
+                                            <strong>
+                                                @Html.DisplayNameFor(model => model.Username)
+                                            </strong>
+                                        </td>
+                                        <td class="">
+                                            <span>
+                                                @Html.DisplayFor(model => model.Username)
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="container text-center">
+                                        <td class="table-gray">
+                                            <strong>
+                                                @Html.DisplayNameFor(model => model.User.Birthday)
+                                            </strong>
+                                        </td>
+                                        <td class="">
+                                            <span>
+                                                @Html.DisplayFor(model => model.User.Birthday)
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="container text-center">
+                                        <td class="table-gray">
+                                            <strong>
+                                                @Html.DisplayNameFor(model => model.User.Status)
+                                            </strong>
+                                        </td>
+                                        <td class="">
+                                            <span>
+                                                @{
+                                                    if (Model.Status == 1)
+                                                    {
+                                                        <span>Active</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>Deactive</span>
+                                                    }
+                                                }
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="container text-center">
+                                        <td class="table-gray">
+                                            <strong>
+                                                @Html.DisplayNameFor(model => model.User.Address)
+                                            </strong>
+                                        </td>
+                                        <td class="">
+                                            <span>
+                                                @Html.DisplayFor(model => model.User.Address)
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="container text-center">
+                                        <td class="table-gray">
+                                            <strong>
+                                                @Html.DisplayNameFor(model => model.User.Gender)
+                                            </strong>
+                                        </td>
+                                        <td class="">
+                                            <span>
+                                                @{
+                                                    if (Model.User.Gender == 1)
+                                                    {
+                                                        <span>Man</span>
+                                                    }
+                                                    else if(Model.User.Gender == 2)
+                                                    {
+                                                        <span>Woman</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>Other</span>
+                                                    }
+                                                }
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="container text-center">
+                                        <td class="table-gray">
+                                            <strong>
+                                                @Html.DisplayNameFor(model => model.User.Avatar)
+                                            </strong>
+                                        </td>
+                                        <td class="">
+                                            <span>
+                                                @Html.DisplayFor(model => model.User.Avatar)
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="container text-center">
+                                        <td class="table-gray">
+                                            <strong>
+                                                @Html.DisplayNameFor(model => model.User.Email)
+                                            </strong>
+                                        </td>
+                                        <td class="">
+                                            <span>
+                                                @Html.DisplayFor(model => model.User.Email)
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="container text-center">
+                                        <td class="table-gray">
+                                            <strong>
+                                                @Html.DisplayNameFor(model => model.User.Phone)
+                                            </strong>
+                                        </td>
+                                        <td class="">
+                                            <span>
+                                                @Html.DisplayFor(model => model.User.Phone)
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="container text-center">
+                                        <td class="table-gray">
+                                            <strong>
+                                                @Html.DisplayNameFor(model => model.User.ExtraCode)
+                                            </strong>
+                                        </td>
+                                        <td class="">
+                                            <span>
+                                                @Html.DisplayFor(model => model.User.ExtraCode)
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="container text-center">
+                                        <td class="table-gray">
+                                            <strong>
+                                                @Html.DisplayNameFor(model => model.Role)
+                                            </strong>
+                                        </td>
+                                        <td class="">
+                                            <span>
+                                                @Html.DisplayFor(model => model.Role.Name)
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
+                        <div class="row justify-content-start">
+                            <div class="form-group">
+                                <a asp-action="Index">Back to List</a>
+                            </div>
+                        </div>
                         <!-- /.card-body -->
-                        <form asp-action="Delete">
-                            <input type="hidden" asp-for="Id" />
-                            <input type="submit" value="Delete" class="btn btn-danger" /> |
-                            <a asp-action="Index">Back to List</a>
-                        </form>
                     </div>
                 </div>
                 <!-- /.col -->

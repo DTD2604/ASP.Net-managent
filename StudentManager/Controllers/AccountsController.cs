@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using StudentManager.Data;
 
 namespace StudentManager.Controllers
 {
-    [Route("[role]/accounts/[action]")]
     public class AccountsController : Controller
     {
         private readonly StudentManagerContext _context;
@@ -17,52 +18,58 @@ namespace StudentManager.Controllers
 
         // GET: Accounts
         [HttpGet]
+        [Authorize(Roles = "admin,teacher")]
         public async Task<IActionResult> Index(string? role)
         {
-            ViewBag.ModulePage = HttpContext.Request.RouteValues["role"].ToString();
+            if (role != null)
+            {
+                ViewBag.ModulePage = role;
+                if (role == "Students")
+                {
+                    var userManagerContext = _context.Accounts
+                        .Include(a => a.Role)
+                        .Include(a => a.User)
+                        .Where(a => a.Role.Name == "Student")
+                        .Where(a => a.DeletedAt == null);
+                    return View(await userManagerContext.ToListAsync());
+                }
+                else if (role == "Teachers")
+                {
+                    var teacherManagerContext = _context.Accounts
+                        .Include(a => a.Role)
+                        .Include(a => a.User)
+                        .Where(a => a.Role.Name == "Teacher")
+                        .Where(a => a.DeletedAt == null);
+                    return View(await teacherManagerContext.ToListAsync());
+                }
+                else
+                {
+                    var adminManagerContext = _context.Accounts
+                        .Include(a => a.Role)
+                        .Include(a => a.User)
+                        .Where(a => a.Role.Name == "Admin")
+                        .Where(a => a.DeletedAt == null);
+                    return View(await adminManagerContext.ToListAsync());
+                }
+            }
 
-            var studentManagerContext = _context.Accounts.Include(a => a.Role).Include(a => a.User);
-
+            ViewBag.ModulePage = HttpContext.Request.RouteValues["Controller"].ToString();
+            var studentManagerContext = _context.Accounts
+                .Include(a => a.Role)
+                .Include(a => a.User)
+                .Where(a => a.DeletedAt == null);
             return View(await studentManagerContext.ToListAsync());
         }
 
-        /*[HttpGet]
-        public IActionResult Teachers()
-        {
-            ViewBag.ModulePage = HttpContext.Request.RouteValues["action"].ToString();
-
-            var studentManagerContext = _context.Accounts.Include(a => a.Role).Include(a => a.User).Where(a => a.RoleId == 2);
-
-            return View(studentManagerContext.ToListAsync());
-        }
-
-        [HttpGet]
-        public IActionResult Admins()
-        {
-            ViewBag.ModulePage = HttpContext.Request.RouteValues["action"].ToString();
-
-            var studentManagerContext = _context.Accounts.Include(a => a.Role).Include(a => a.User).Where(a => a.RoleId == 3);
-
-            return View(studentManagerContext.ToListAsync());
-        }
-
-        [HttpGet]
-        public IActionResult Users()
-        {
-            ViewBag.ModulePage = HttpContext.Request.RouteValues["action"].ToString();
-
-            var studentManagerContext = _context.Accounts.Include(a => a.Role).Include(a => a.User).Where(a => a.RoleId == 1);
-
-            return View(studentManagerContext.ToListAsync());
-        }*/
-
         // GET: Accounts/Create
-        [HttpPost]
+        /*[HttpPost]
+        [Route("{controller}/Create/{id?}")]*/
+        [Authorize(Roles = "admin")]
         public IActionResult Create()
         {
             ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString();
-            ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Id");
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
+            ViewData["users"] = _context.Users.Where(d => d.DeletedAt == null).ToList();
+            ViewData["roles"] = _context.Roles.Where(r => r.DeletedAt == null).ToList();
             return View();
         }
 
@@ -71,20 +78,27 @@ namespace StudentManager.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,RoleId,UserId,Username,Password,Status,IpClient,LastLogin,LastLogout,CreatedAt,UpdatedAt,DeletedAt")] Account account)
+        public async Task<IActionResult> Create([Bind("Id,RoleId,UserId,Username,Password,Status,IpClient,CreatedAt")] Account account)
         {
+            ModelState["Role"].ValidationState = ModelValidationState.Valid;
+            ModelState["User"].ValidationState = ModelValidationState.Valid;
+
             if (ModelState.IsValid)
             {
+                account.CreatedAt = DateTime.UtcNow;
                 _context.Add(account);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Id", account.RoleId);
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", account.UserId);
+            ViewData["users"] = _context.Users.Where(d => d.DeletedAt == null).ToList();
+            ViewData["roles"] = _context.Roles.Where(r => r.DeletedAt == null).ToList();
             return View(account);
         }
 
         // GET: Accounts/Edit/5
+        /*[HttpPost]
+        [Route("{controller}/Edit/{id}")]*/
+        [Authorize(Roles = "admin,teacher")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -97,9 +111,9 @@ namespace StudentManager.Controllers
             {
                 return NotFound();
             }
-            ViewBag.ModulePage = RouteData.Values["c"].ToString();
-            ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Id", account.RoleId);
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", account.UserId);
+            ViewBag.ModulePage = RouteData.Values["controller"].ToString();
+            ViewData["users"] = _context.Users.Where(d => d.DeletedAt == null).ToList();
+            ViewData["roles"] = _context.Roles.Where(r => r.DeletedAt == null).ToList();
             return View(account);
         }
 
@@ -115,8 +129,13 @@ namespace StudentManager.Controllers
                 return NotFound();
             }
 
+            ModelState["Role"].ValidationState = ModelValidationState.Valid;
+            ModelState["User"].ValidationState = ModelValidationState.Valid;
+
             if (ModelState.IsValid)
             {
+                account.IpClient = _context.Accounts.Where(a => a.Id == id).Select(a => a.IpClient).FirstOrDefault();
+                account.UpdatedAt = DateTime.UtcNow;
                 try
                 {
                     _context.Update(account);
@@ -135,13 +154,14 @@ namespace StudentManager.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewBag.ModulePage = RouteData.Values["c"].ToString();
-            ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Id", account.RoleId);
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", account.UserId);
+            ViewBag.ModulePage = RouteData.Values["controller"].ToString();
+            ViewData["users"] = _context.Users.Where(d => d.DeletedAt == null).ToList();
+            ViewData["roles"] = _context.Roles.Where(r => r.DeletedAt == null).ToList();
             return View(account);
         }
 
         // GET: Accounts/Delete/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -169,6 +189,7 @@ namespace StudentManager.Controllers
             var account = await _context.Accounts.FindAsync(id);
             if (account != null)
             {
+                account.DeletedAt = DateTime.UtcNow;
                 _context.Accounts.Remove(account);
             }
 
@@ -183,17 +204,24 @@ namespace StudentManager.Controllers
                 return NotFound();
             }
 
-            var account = await _context.Accounts.FindAsync(id);
+            var account = await _context.Accounts
+                        .Include(a => a.Role)
+                        .Include(a => a.User)
+                        .Where(a => a.DeletedAt == null)
+                        .FirstOrDefaultAsync(m => m.Id == id); ;
             if (account == null)
             {
                 return NotFound();
             }
-            ViewBag.ModulePage = RouteData.Values["c"].ToString();
-            ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Id", account.RoleId);
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", account.UserId);
+            /*var accounts = _context.Accounts
+                        .Include(a => a.Role)
+                        .Include(a => a.User)
+                        .Where(a => a.DeletedAt == null)
+                        .FirstOrDefaultAsync(m => m.Id == id);*/
+            ViewBag.ModulePage = RouteData.Values["Controller"].ToString();
             return View(account);
         }
-        
+
 
         private bool AccountExists(int id)
         {
