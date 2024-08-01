@@ -95,6 +95,9 @@ namespace StudentManager.Controllers
                     account.CreatedAt = DateTime.UtcNow;
                     account.Role.Name = "student";
                     account.User = user;
+                    account.LastLogin = DateTime.UtcNow;
+                    account.LastLogout = DateTime.UtcNow;
+                    account.IpClient = HttpContext.Connection.RemoteIpAddress.ToString();
 
                     // Add the new User and Account
                     _context.Users.Add(user);

@@ -78,7 +78,7 @@ namespace StudentManager.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,RoleId,UserId,Username,Password,Status,IpClient,LastLogin,LastLogout,CreatedAt,UpdatedAt,DeletedAt")] Account account)
+        public async Task<IActionResult> Create([Bind("Id,RoleId,UserId,Username,Password,Status,IpClient,CreatedAt")] Account account)
         {
             ModelState["Role"].ValidationState = ModelValidationState.Valid;
             ModelState["User"].ValidationState = ModelValidationState.Valid;
