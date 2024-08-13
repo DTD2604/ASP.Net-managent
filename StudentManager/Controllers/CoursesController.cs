@@ -7,6 +7,7 @@ using StudentManager.Data;
 
 namespace StudentManager.Controllers
 {
+    [Authorize]
     public class CoursesController : Controller
     {
         private readonly StudentManagerContext _context;
@@ -18,18 +19,21 @@ namespace StudentManager.Controllers
 
         // GET: Courses
         [Route("Courses/index")]
-        [Authorize(Roles = "admin,teacher,student")]
         public async Task<IActionResult> Index()
         {
-            ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString();
+            var userHasEditRights = User.IsInRole("Admin");
+            ViewBag.UserHasEditRights = userHasEditRights;
+            
+            ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString() ?? throw new InvalidOperationException();
             var studentManagerContext = _context.Courses
                 .Where(c => c.DeletedAt == null)
                 .Include(c => c.Department);
+            
             return View(await studentManagerContext.ToListAsync());
         }
 
         // GET: Courses/Create
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString();
@@ -63,7 +67,7 @@ namespace StudentManager.Controllers
         }
 
         // GET: Courses/Edit/5
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -126,7 +130,7 @@ namespace StudentManager.Controllers
         }
 
         // GET: Courses/Delete/5
-        [Authorize(Roles = "admin")]
+            [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -148,7 +152,7 @@ namespace StudentManager.Controllers
             }
 
             //ViewData["model"] = _context.Departments.Where(d => d.DeletedAt == null).ToList();
-            ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString();
+            ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString() ?? throw new InvalidOperationException();
             return View(course);
         }
 

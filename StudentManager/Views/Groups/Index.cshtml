@@ -10,14 +10,14 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Account</h1>
+                    <h1 class="m-0">Class</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
                             <a href="@Url.Action("Index", "Home")">Home</a>
                         </li>
-                        <li class="breadcrumb-item active">Account</li>
+                        <li class="breadcrumb-item active">Class</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -33,10 +33,13 @@
                         <div class="card-header">
                             <h3 class="card-title">DataTable of Class</h3>
                         </div>
+                        @if (ViewBag.UserHasEditRights)
+                        {
+                            <div class="d-grid gap-2 col-6 d-md-block">
+                                <a class="button-68" asp-action="Create">Create Class</a>
+                            </div>
+                        }
                         <!-- HTML !-->
-                        <div class="d-grid gap-2 col-6 d-md-block">
-                            <a class="button-68" asp-action="Create">Create Account</a>
-                        </div>
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example2" class="table table-bordered table-hover">
@@ -63,7 +66,10 @@
                                     <th>
                                         @Html.DisplayNameFor(model => model.Term)
                                     </th>
-                                    <th></th>
+                                    @if (ViewBag.UserHasEditRights)
+                                    {
+                                        <th></th>
+                                    }
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -100,13 +106,16 @@
                                         <td>
                                             @Html.DisplayFor(modelItem => item.Term.Name)
                                         </td>
-                                        <div>
-                                            <td>
-                                                <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id" >Edit</a>
+                                        @if (ViewBag.UserHasEditRights)
+                                        {
+                                            <div>
+                                                <td>
+                                                    <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
 
-                                                <a class="btn btn-primary btn-sm" asp-action="Delete" asp-route-id="@item.Id" >Delete</a>
-                                            </td>
-                                        </div>
+                                                    <a class="btn btn-primary btn-sm" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                                </td>
+                                            </div>
+                                        }
                                     </tr>
                                 }
                                 </tbody>

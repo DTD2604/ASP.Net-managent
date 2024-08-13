@@ -14,7 +14,9 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li class="breadcrumb-item">
+                            <a href="@Url.Action("Index", "Home")">Home</a>
+                        </li>
                         <li class="breadcrumb-item active">Course</li>
                     </ol>
                 </div><!-- /.col -->
@@ -31,53 +33,62 @@
                         <div class="card-header">
                             <h3 class="card-title">DataTable of Course</h3>
                         </div>
+                        @if (ViewBag.UserHasEditRights)
+                        {
+                            <a class="button-68" asp-action="Create">Create New</a>
+                        }
                         <!-- HTML !-->
-                        <a class="button-68" asp-action="Create">Create New</a>
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead class="table-primary">
-                                    <tr>
-                                        <th>
-                                                @Html.DisplayNameFor(model => model.Name)
-                                        </th>
-                                        <th>
-                                                @Html.DisplayNameFor(model => model.Department)
-                                        </th>
-                                        <th>
-                                                @Html.DisplayNameFor(model => model.Status)
-                                        </th>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Name)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Department)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Status)
+                                    </th>
+                                    @if (ViewBag.UserHasEditRights)
+                                    {
                                         <th></th>
-                                    </tr>
+                                    }
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach (var item in Model)
-                                    {
-                                        <tr>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.Name)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.Department.Name)
-                                            </td>
-                                            <td>
-                                                @{
-                                                    if(item.Status == 1)
-                                                    {
-                                                        <span>Active</span>
-                                                    }
-                                                    else
-                                                    {
-                                                        <span>Deactive</span>
-                                                    }
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Department.Name)
+                                        </td>
+                                        <td>
+                                            @{
+                                                if (item.Status == 1)
+                                                {
+                                                    <span>Active</span>
                                                 }
-                                            </td>
+                                                else
+                                                {
+                                                    <span>Deactive</span>
+                                                }
+                                            }
+                                        </td>
+                                        @if (ViewBag.UserHasEditRights)
+                                        {
                                             <td>
                                                 <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                                                 <a class="btn btn-primary btn-sm" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                                             </td>
-                                        </tr>
-                                    }
+                                        }
+                                    </tr>
+                                }
                                 </tbody>
                             </table>
                         </div>
@@ -92,7 +103,3 @@
     </section>
     <!-- /.content -->
 </div>
-
-
-
-

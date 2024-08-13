@@ -30,4 +30,67 @@
     <Folder Include="Models\Data\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\tables\data.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\tables\jsgrid.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\tables\simple.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\search\enhanced-results.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\search\enhanced.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\search\simple-results.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\search\simple.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\mailbox\compose.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\mailbox\mailbox.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\mailbox\read-mail.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\layout\boxed.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\layout\collapsed-sidebar.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\layout\fixed-footer.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\layout\fixed-sidebar-custom.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\layout\fixed-sidebar.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\layout\fixed-topnav.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\layout\top-nav-sidebar.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\layout\top-nav.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\forms\advanced.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\forms\editors.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\forms\general.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\forms\validation.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\404.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\500.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\blank.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\contact-us.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\contacts.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\e-commerce.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\faq.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\forgot-password-v2.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\forgot-password.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\invoice-print.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\invoice.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\language-menu.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\legacy-user-menu.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\lockscreen.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\login-v2.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\login.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\pace.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\profile.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\project-add.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\project-detail.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\project-edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\projects.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\recover-password-v2.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\recover-password.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\register-v2.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\examples\register.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\charts\chartjs.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\charts\flot.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\charts\inline.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\charts\uplot.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\UI\buttons.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\UI\general.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\UI\icons.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\UI\modals.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\UI\navbar.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\UI\ribbons.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\UI\sliders.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\UI\timeline.cshtml" />
+  </ItemGroup>
+
 </Project>

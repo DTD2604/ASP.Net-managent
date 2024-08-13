@@ -35,9 +35,12 @@
                             <h3 class="card-title">DataTable of Account</h3>
                         </div>
                         <!-- HTML !-->
-                        <div class="d-grid gap-2 col-6 d-md-block">
-                            <a class="button-68" asp-action="Create" style="@((role == "Students" || role == "Teachers" || role == "Admins") ? "display: none;" : "")">Create Account</a>
-                        </div>
+                        @if (ViewBag.UserHasEditRights)
+                        {
+                            <div class="d-grid gap-2 col-6 d-md-block">
+                                <a class="button-68" asp-action="Create" style="@((role == "Students" || role == "Teachers" || role == "Admins") ? "display: none;" : "")">Create Account</a>
+                            </div>
+                        }
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example2" class="table table-bordered table-hover">
@@ -64,7 +67,9 @@
                                     <th>
                                         @Html.DisplayNameFor(model => model.LastLogout)
                                     </th>
+
                                     <th></th>
+
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -102,11 +107,13 @@
                                             @Html.DisplayFor(modelItem => item.LastLogout)
                                         </td>
                                         <div >
-                                            <td>
-                                                <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id" style="@((role == "Students" || role == "Teachers" || role == "Admins") ? "display: none;" : "")">Edit</a>
+                                            <td >
+                                                @if (ViewBag.UserHasEditRights)
+                                                {
+                                                    <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id" style="@((role == "Students" || role == "Teachers" || role == "Admins") ? "display: none;" : "")">Edit</a>
 
-                                                <a class="btn btn-primary btn-sm" asp-action="Delete" asp-route-id="@item.Id" style="@((role == "Students" || role == "Teachers" || role == "Admins") ? "display: none;" : "")">Delete</a>
-
+                                                    <a class="btn btn-primary btn-sm" asp-action="Delete" asp-route-id="@item.Id" style="@((role == "Students" || role == "Teachers" || role == "Admins") ? "display: none;" : "")">Delete</a>
+                                                }
                                                 <a class="btn btn-primary btn-sm" asp-action="Detail" asp-route-id="@item.Id">Detail</a>
                                             </td>
                                         </div>

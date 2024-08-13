@@ -26,6 +26,7 @@ namespace StudentManager.Controllers
         //[ActionName("Login")]
         public async Task<IActionResult> Index([Bind("Username,Password,LastLogin")] Account account)
         {
+            // Check if the username exists
             var user = await _context.Accounts
                 .Include(a => a.User)
                 .Include(a => a.Role)
@@ -33,16 +34,22 @@ namespace StudentManager.Controllers
 
             if (user != null)
             {
+                // Create the claims
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, user.Username),
+                    new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                     new Claim(ClaimTypes.Role, user.Role.Name)
                 };
 
+                // Create the identity
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                
+                // Sign in
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults
+                    .AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
 
-                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
-
+                // Check if the password is correct
                 if (user.Password == account.Password)
                 {
                     // Update LastLogin if needed
@@ -65,6 +72,11 @@ namespace StudentManager.Controllers
             }
             return View(account);
         }
+
+        public IActionResult Register()
+        {
+            return View();
+        }
         
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -72,8 +84,6 @@ namespace StudentManager.Controllers
             [Bind("Username,Password,RoleId,UserId,Status,CreatedAt,User")] Account account)
         {
             
-            if (ModelState.IsValid)
-            {
                 // Check if the username already exists
                 var verify = await _context.Accounts
                     .FirstOrDefaultAsync(a => a.Username == account.Username);
@@ -93,7 +103,7 @@ namespace StudentManager.Controllers
 
                     // Set the CreatedAt property for Account
                     account.CreatedAt = DateTime.UtcNow;
-                    account.Role.Name = "student";
+                    account.RoleId = 1;
                     account.User = user;
                     account.LastLogin = DateTime.UtcNow;
                     account.LastLogout = DateTime.UtcNow;
@@ -112,10 +122,23 @@ namespace StudentManager.Controllers
                     // Username already exists
                     ModelState.AddModelError("Username", "Username already exists.");
                 }
-            }
 
             // If we got this far, something failed, redisplay form
             return View(account);
+        }
+        
+        public async Task<IActionResult> Logout(int id)
+        {
+            var user = _context.Accounts
+                .Include(a => a.Role)
+                .Include(a => a.User)
+                .FirstOrDefault(a => a.Id == id);
+            
+            user.LastLogout = DateTime.UtcNow;
+            await _context.SaveChangesAsync();
+            
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction(nameof(Index));
         }
         
         public IActionResult ForgotPassword()

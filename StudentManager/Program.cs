@@ -32,14 +32,6 @@ namespace StudentManager
                     options.AccessDeniedPath = "/Account/AccessDenied";
                 });
 
-            /*// Cấu hình chính sách phân quyền
-            builder.Services.AddAuthorization(options =>
-            {
-                options.AddPolicy("RequireStudentRole", policy => policy.RequireRole("student"));
-                options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("admin"));
-                options.AddPolicy("RequireTeacherRole", policy => policy.RequireRole("teacher"));
-            });*/
-
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

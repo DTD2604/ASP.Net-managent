@@ -21,6 +21,9 @@ namespace StudentManager.Controllers
         // GET: GroupStudents
         public async Task<IActionResult> Index()
         {
+            var userHasEditRights = User.IsInRole("Admin");
+            ViewBag.UserHasEditRights = userHasEditRights;
+            
             ViewBag.ModulePage = HttpContext.Request.Query["c"];
             var studentManagerContext = _context.GroupStudents
                 .Include(g => g.Course)

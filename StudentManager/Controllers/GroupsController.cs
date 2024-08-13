@@ -22,6 +22,9 @@ namespace StudentManager.Controllers
         [Route("Groups/index")]
         public async Task<IActionResult> Index()
         {
+            var userHasEditRights = User.IsInRole("Admin");
+            ViewBag.UserHasEditRights = userHasEditRights;
+            
             ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString();
             var studentManagerContext = _context.Groups
                 .Include(group => group.Department)
@@ -90,7 +93,8 @@ namespace StudentManager.Controllers
             }
             ViewData["departments"] = _context.Departments.Where(d => d.DeletedAt == null).ToList();
             ViewData["terms"] = _context.Terms.Where(term => term.DeletedAt == null).ToList();
-            ViewData["teachers"] = _context.Accounts.Include(teacher => teacher.User).Where(teacher => teacher.DeletedAt == null)
+            ViewData["teachers"] = _context.Accounts.Include(teacher => teacher.User)
+                .Where(teacher => teacher.DeletedAt == null)
                 .Where(teacher => teacher.RoleId == 2).ToList();
             ViewData["captains"] = _context.Accounts.Include(teacher => teacher.User).Where(teacher => teacher.DeletedAt == null)
                 .Where(teacher => teacher.RoleId == 1).ToList();
@@ -102,7 +106,7 @@ namespace StudentManager.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,DepartmentId,TermId,Name,Slug,StudentNumbers,Teacher,Captain,Status,CreatedAt,UpdatedAt,DeletedAt")] Group group)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,DepartmentId,TermId,Name,Slug,StudentNumbers,TeacherId,CaptainId,Status")] Group group)
         {
             if (id != group.Id)
             {
@@ -113,6 +117,7 @@ namespace StudentManager.Controllers
             {*/
                 try
                 {
+                    group.Slug = GenerateSlug(group.Name);
                     group.UpdatedAt = DateTime.UtcNow;
                     _context.Update(group);
                     await _context.SaveChangesAsync();

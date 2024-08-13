@@ -26,7 +26,10 @@ namespace StudentManager.Controllers
         [Route("Department/index")]
         public async Task<IActionResult> Index()
         {
-            ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString();
+            var userHasEditRights = User.IsInRole("Admin");
+            ViewBag.UserHasEditRights = userHasEditRights;
+            
+            ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString() ?? throw new InvalidOperationException();
 
             var studentManagerContext = _context.Departments
                 .Include(d => d.Leader)
@@ -46,7 +49,7 @@ namespace StudentManager.Controllers
                 .Where(a => a.RoleId == 2)
                 .Where(a => a.DeletedAt == null).ToList();
 
-            ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString();
+            ViewBag.ModulePage = HttpContext.Request.RouteValues["controller"].ToString() ?? throw new InvalidOperationException();
 
             return View();
         }
