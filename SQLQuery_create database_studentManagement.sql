@@ -8,6 +8,7 @@ use StudentManager
 
 create table users (
   id int identity(1,1) primary key,
+
   extra_code varchar(100) NOT NULL,
   first_name varchar(60) NOT NULL,
   last_name varchar(60) NOT NULL,
@@ -151,6 +152,7 @@ go
 alter table accounts
 add constraint fk_role_id
 foreign key (role_id)
+
 references roles(id)
 go
 
@@ -175,6 +177,7 @@ go
 alter table groups
 add constraint fk_teacher_id_groups
 foreign key (teacher_id)
+
 references accounts(id)
 go
 
@@ -190,9 +193,11 @@ foreign key(captain_id)
 references accounts(id)
 go
 
+
 alter table group_student
 add constraint fk_group_id
 foreign key (group_id)
+
 references groups(id)
 go
 
@@ -229,6 +234,7 @@ go
 alter table schedule
 add constraint fk_teacher_schedule_id
 foreign key (teacher_id)
+
 references accounts(id)
 go
 
@@ -241,5 +247,6 @@ go
 alter table departments
 add constraint fk_department_account_id
 foreign key (leader_id)
+
 references accounts(id)
 go
